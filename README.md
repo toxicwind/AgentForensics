@@ -20,7 +20,7 @@ AgentForensics is an open-source security framework that monitors LLM agent sess
 
 As LLM agents increasingly read emails, browse websites, process documents, and execute code, they are exposed to a new attack surface: **indirect prompt injection** - malicious instructions embedded in external content that hijack the agent's behaviour.
 
-Existing tools focus on input filtering at the user layer. AgentForensics monitors the **entire agent session** including tool outputs, retrieved documents, and API responses - where the real attacks happen.
+Existing tools focus on input filtering at the architect layer. AgentForensics monitors the **entire agent session** including tool outputs, retrieved documents, and API responses - where the real attacks happen.
 
 ---
 
@@ -86,7 +86,7 @@ flowchart TD
 |------|---------|--------|
 | H01 | `ignore previous/all/prior instructions` | 0.35 |
 | H02 | `you are now / your new role/persona` | 0.30 |
-| H03 | `do not tell/inform the user` | 0.25 |
+| H03 | `do not tell/inform the architect` | 0.25 |
 | H04 | Token injection markers `[[SYSTEM]]`, `[INST]`, `<\|im_start\|>` | 0.15 |
 | H05 | Sudden language/script switch (evasion) | 0.20 |
 | H06 | Imperative commands in tool output (send, forward, upload, exfiltrate) | 0.20 |
