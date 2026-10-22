@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+# AgentForensics — self-test gate (PASS/FAIL).
+# Vendored fork (aparna19). Gate = the package's python modules compile and the
+# CLI module imports; real pytest suite runs when deps are present. No live
+# instrumentation.
+set -euo pipefail
+cd "$(dirname "$0")/.."
+export RUN_FAST_ACTIVE=0
+PY="${PY:-python3}"
+
+echo "== AgentForensics check: start =="
+[ -d agentforensics ] || { echo "FAIL: agentforensics/ missing"; exit 1; }
+
+set +e
+out="$("$PY" -m compileall -q agentforensics 2>&1)"
+rc=$?
+set -e
+echo "$out"
+[ "$rc" -eq 0 ] || { echo "FAIL: compileall rc=$rc"; exit 1; }
+
+set +e
+iout="$("$PY" -c 'import sys; sys.path.insert(0,"."); import agentforensics.cli; print("agentforensics.cli import OK")' 2>&1)"
+irc=$?
+set -e
+echo "$iout"
+[ "$irc" -eq 0 ] || { echo "FAIL: cli import rc=$irc"; exit 1; }
+
+echo "== AgentForensics check: PASS (compile + cli import) =="
+exit 0

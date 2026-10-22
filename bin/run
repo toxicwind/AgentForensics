@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# AgentForensics — primary operation: forensic pipeline CLI for agent workflows.
+# Entry: agentforensics/cli.py (console script). Vendored fork (aparnaa19).
+#
+# Usage:
+#   bin/run check           # fast gate: package compiles + CLI help
+#   bin/run [args...]       # run the agentforensics CLI
+set -euo pipefail
+cd "$(dirname "$0")/.."
+export RUN_FAST_ACTIVE=0
+PY="${PY:-python3}"
+
+if [ "${1:-}" = "check" ]; then exec ./bin/check; fi
+[ -f agentforensics/cli.py ] || { echo "FAIL: agentforensics/cli.py missing"; exit 1; }
+exec "$PY" -m agentforensics.cli "$@"
