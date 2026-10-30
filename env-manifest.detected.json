@@ -1,0 +1,34 @@
+{
+  "product": "AgentForensics",
+  "path": "/home/toxic/pens/ranch/products/AgentForensics",
+  "files": 47,
+  "detected_at": "2026-10-30T06:11:02.776261Z",
+  "env_vars": {
+    "AF_DISABLE_ML": [
+      "benchdeepset.py",
+      "benchmark_latency.py",
+      "benchtest.py"
+    ],
+    "AF_INJECT_THRESHOLD": [
+      "agentforensics/cli.py"
+    ],
+    "dashboardPort": [
+      "agentforensics-vscode/src/extension.ts"
+    ],
+    "openExternal": [
+      "agentforensics-vscode/src/extension.ts"
+    ],
+    "path": [
+      "agentforensics-vscode/src/extension.ts"
+    ],
+    "score": [
+      "agentforensics-vscode/src/extension.ts"
+    ],
+    "sessionShort": [
+      "agentforensics-vscode/src/extension.ts"
+    ],
+    "turn": [
+      "agentforensics-vscode/src/extension.ts"
+    ]
+  }
+}
