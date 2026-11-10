@@ -1,0 +1,27 @@
+{
+  "name": "agentforensics",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "agentforensics": "./bin/agentforensics.ts",
+    "agentforensics-vscode": "./bin/agentforensics-vscode.ts",
+    "scripts": "./bin/scripts.ts",
+    "tests": "./bin/tests.ts"
+  },
+  "scripts": {
+    "dev": "bun --hot run ./bin/agentforensics.ts",
+    "test": "bun test",
+    "typecheck": "tsgo --noEmit -p tsconfig.json",
+    "lint": "biome check .",
+    "fmt": "biome format --write .",
+    "build": "bun build ./bin/agentforensics.ts --outdir ./dist"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "bun-types": "latest",
+    "typescript": "latest",
+    "@biomejs/biome": "latest"
+  },
+  "dependencies": {}
+}
