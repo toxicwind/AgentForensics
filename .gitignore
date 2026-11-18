@@ -48,3 +48,19 @@ Thumbs.db
 # ── Benchmark result caches (optional — remove if you want to commit results) ─
 # benchtest_results.json
 # benchmark_results.json
+# pensctl audit-gitignore --fix (standard pollution)
+.venv/
+# pensctl audit-gitignore --fix (standard pollution)
+venv/
+# pensctl audit-gitignore --fix (standard pollution)
+.cache/
+# pensctl audit-gitignore --fix (standard pollution)
+target/
+# pensctl audit-gitignore --fix (standard pollution)
+blobs/
+# pensctl audit-gitignore --fix (standard pollution)
+sessions/
+# pensctl audit-gitignore --fix (standard pollution)
+.next/
+# pensctl audit-gitignore --fix (standard pollution)
+.turbo/
